@@ -18,8 +18,9 @@ logger.setLevel(logging.DEBUG)
 ######################################################################################
 	
 def get_model():
-	devs = [mx.gpu(0)]
-	network = get_unet()
+	devs = [mx.gpu(3)]
+	# network = get_unet()
+	network = get_res_unet()
 	
 	model = mx.model.FeedForward(ctx=devs,
 		symbol          = network,
